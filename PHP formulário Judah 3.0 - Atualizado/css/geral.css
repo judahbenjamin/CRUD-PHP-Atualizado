@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+/* Estilo para links de botão */
+a {
+    text-decoration: none;
+    color: #3498db;
+}
+
+a:hover {
+    color: #2980b9;
+}
+
+/* Botões genéricos */
+button, input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Estilo para formulários */
+form div {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Garante que padding não aumente a largura total */
+}

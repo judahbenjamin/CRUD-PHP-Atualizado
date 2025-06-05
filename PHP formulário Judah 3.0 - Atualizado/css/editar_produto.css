@@ -1,0 +1,33 @@
+/* Importa estilos gerais */
+@import url('geral.css');
+
+.form-container {
+    max-width: 500px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form button {
+    margin-top: 20px;
+    width: auto;
+    padding: 12px 25px;
+    margin-right: 10px;
+}
+
+form a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ecf0f1;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+form a:hover {
+    background-color: #bdc3c7;
+}

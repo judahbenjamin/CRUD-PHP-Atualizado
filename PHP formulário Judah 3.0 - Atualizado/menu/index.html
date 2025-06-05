@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column; /* Organiza os itens em uma coluna */
+            align-items: center;    /* Centraliza horizontalmente */
+            justify-content: center; /* Centraliza verticalmente (se houver espaço suficiente) */
+            min-height: 100vh;      /* Garante que o body ocupe a altura total da viewport */
+            margin: 0;              /* Remove a margem padrão do body */
+            background-color: #f0f2f5; /* Um fundo suave para o corpo */
+            font-family: Arial, sans-serif; /* Fonte mais legível */
+        }
+
+        h1 {
+            color: #333; /* Cor do título */
+            margin-bottom: 30px; /* Espaço entre o título e os botões */
+            font-size: 2.5em; /* Tamanho do título */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sombra suave para o título */
+        }
+
+        button {
+            width: 200px; /* Largura fixa para os botões */
+            padding: 15px 20px; /* Espaçamento interno para o botão */
+            margin-bottom: 15px; /* Espaçamento entre os botões */
+            background-color: #007bff; /* Cor de fundo azul */
+            color: white; /* Cor do texto */
+            border: none; /* Remove a borda padrão */
+            border-radius: 8px; /* Cantos levemente arredondados */
+            cursor: pointer; /* Indica que é clicável */
+            font-size: 1.1em; /* Tamanho da fonte um pouco maior */
+            transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        }
+
+        button:last-child {
+            margin-bottom: 0; /* Remove a margem do último botão */
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Cor mais escura ao passar o mouse */
+        }
+
+        a {
+            text-decoration: none; /* Remove o sublinhado dos links */
+            color: inherit; /* Faz o link herdar a cor do botão */
+            display: block; /* Garante que o link ocupe todo o espaço do botão */
+            text-align: center; /* Centraliza o texto do link dentro do botão */
+        }
+    </style>
+</head>
+<body>
+    <h1>Bem-vindo!</h1>
+    <p>Desenvolvido por Judah Benjamin - 2025</p>
+
+    <button type="button">
+        <a href="../clientes/cadastrar_cliente.php">Clientes</a>
+    </button>
+    <button type="button">
+        <a href="../produtos/cadastrar_produto.html">Produtos</a>
+    </button>
+    <button type="button">
+        <a href="../vendas/cadastrar_venda.php">Vendas</a>
+    </button>
+</body>
+</html>

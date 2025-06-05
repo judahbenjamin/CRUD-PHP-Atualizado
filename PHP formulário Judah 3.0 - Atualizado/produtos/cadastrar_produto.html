@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produto</title>
+    <link rel="stylesheet" href="../css/cadastrar_produto.css">
+    <style>
+        /* Estilo básico para a mensagem de erro */
+        .error-message-inline {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+            display: none; /* Inicia oculto */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Cadastro de Novo Produto</h1>
+    <form id="cadastroProdutoForm" action="cadastrar_produto.php" method="post"> <div>
+            <label for="descricao">Descrição:</label>
+            <input type="text" id="descricao" name="descricao" maxlength="100" required>
+        </div>
+        <div>
+            <label for="preco">Preço:</label>
+            <input type="number" id="preco" name="preco" step="0.01" required>
+        </div>
+        <div>
+            <label for="qtdeEstoque">Quantidade em Estoque:</label>
+            <input type="number" id="qtdeEstoque" name="qtdeEstoque" min="0" required>
+        </div>
+        <div>
+            <label for="dataValidade">Data de Validade:</label>
+            <input type="date" id="dataValidade" name="dataValidade" required>
+            <span id="dataValidadeError" class="error-message-inline"></span> <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const dataValidadeInput = document.getElementById('dataValidade');
+                    const dataValidadeErrorSpan = document.getElementById('dataValidadeError'); // Pega o span de erro
+                    const cadastroProdutoForm = document.getElementById('cadastroProdutoForm'); // Pega o formulário
+
+                    function validarData() {
+                        const dataSelecionadaStr = dataValidadeInput.value;
+
+                        // Se o campo estiver vazio, não mostra erro (o 'required' do HTML já cuida disso na submissão)
+                        if (!dataSelecionadaStr) {
+                            dataValidadeErrorSpan.style.display = 'none';
+                            return true;
+                        }
+
+                        const dataSelecionada = new Date(dataSelecionadaStr + 'T00:00:00');
+                        const dataAtual = new Date();
+                        dataAtual.setHours(0, 0, 0, 0);
+
+                        // Verifica se a data é inválida (ex: 31 de fevereiro)
+                        // ou se a data selecionada é anterior ou igual à data atual (vencida)
+                        // getTime() retorna NaN para datas inválidas
+                        if (isNaN(dataSelecionada.getTime()) || dataSelecionada <= dataAtual) {
+                            dataValidadeErrorSpan.textContent = 'A data de validade deve ser uma data futura válida.';
+                            dataValidadeErrorSpan.style.display = 'block';
+                            return false;
+                        } else {
+                            dataValidadeErrorSpan.style.display = 'none';
+                            return true;
+                        }
+                    }
+
+                    // Valida no evento 'change' (quando o campo perde o foco ou a data é selecionada)
+                    dataValidadeInput.addEventListener('change', validarData);
+
+                    // Valida na submissão do formulário
+                    cadastroProdutoForm.addEventListener('submit', function(event) {
+                        if (!validarData()) {
+                            event.preventDefault(); // Impede o envio do formulário se a validação falhar
+                            dataValidadeInput.focus(); // Coloca o foco de volta no campo
+                        }
+                    });
+                });
+            </script>
+        </div>
+        <button type="submit">Cadastrar Produto</button>
+    </form>
+    <p>
+        <a href="../menu/index.html">Voltar à Página Inicial</a>
+        <a href="../produtos/pesquisar_produto.php">Ver Produtos Listados</a>
+    </p>
+
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+body {
+    font-family: sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+}
+
+.container-cadastro {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #1877f2;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-divider {
+    border-top: 1px solid #dadde1;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+textarea,
+select {
+    width: calc(100% - 22px); /* Ajuste para padding + border */
+    padding: 12px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #1877f2;
+    box-shadow: 0 0 5px rgba(24, 119, 242, 0.3);
+}
+
+.form-group-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Espaço entre os botões */
+    margin-top: 20px;
+}
+
+.form-group-buttons input[type="submit"],
+.form-group-buttons input[type="reset"] {
+    flex: 1; /* Para que os botões ocupem o mesmo espaço */
+    background-color: #1877f2;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.form-group-buttons input[type="reset"] {
+    background-color: #6c757d; /* Cinza para o botão Limpar/Voltar */
+}
+
+.form-group-buttons input[type="submit"]:hover {
+    background-color: #1665c1;
+}
+
+.form-group-buttons input[type="reset"]:hover {
+    background-color: #5a6268;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column; /* Para empilhar os botões */
+    gap: 10px;
+    margin-top: 20px;
+    align-items: center; /* Centraliza os botões empilhados */
+}
+
+.button-container a {
+    display: block; /* Ocupa a largura total */
+    background-color: #e9ecef; /* Cor dos botões secundários */
+    color: #495057;
+    padding: 10px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    width: 100%; /* Para que os links também ocupem 100% */
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.button-container a:hover {
+    background-color: #d3d9df;
+}
+
+/* Mensagens de status */
+.success-message {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.error-message {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.error-message ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+.error-message li {
+    margin-bottom: 5px;
+}
+
+/* Estilos para radio e checkbox */
+.form-group input[type="radio"],
+.form-group input[type="checkbox"] {
+    margin-right: 5px;
+}
